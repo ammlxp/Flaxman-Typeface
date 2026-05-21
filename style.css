@@ -75,10 +75,26 @@ a {
     margin-left: 10px;
 }
 
-/* mobile layout */
 @media (max-width: 500px) {
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
     .top {
         flex-direction: column;
+        width: 100%;
+    }
+
+    .leftside,
+    .rightside {
+        width: 100%;
+        max-width: 100%;
+        padding: 20px;
     }
 
     .mainlink {
@@ -86,20 +102,28 @@ a {
     }
 
     .footnote {
-        top: -10px;
-        font-size: 14px;
-        line-height: 120%;
+        position: static;
+        max-width: 100%;
         width: 100%;
+        top: auto;
+        margin-top: 10px;
     }
 
-    .rightside {
-        padding: 0 20px 20px 30px;
-        margin-top: 30px;
+    .carousel {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
     }
 
     .carousel img {
         width: 100%;
-        max-width: 80%;
+        max-width: calc(100vw - 110px);
         height: auto;
+        display: block;
+    }
+
+    .arrows {
+        flex-shrink: 0;
+        margin-left: 8px;
     }
 }
