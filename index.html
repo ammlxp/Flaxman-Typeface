@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="icon.svg">
+    <title>Flaxman Typeface</title>
+</head>
+<body>
+    <div class="top">
+        <div class="leftside">
+            <p class="mainlink"><a href="/fonts/flaxman.zip" download>download<br>flaxman</a></p> 
+            <p class="footnote">This type revival is a work in progress. The typeface currently includes only the original letterpress characters and has not yet been fully expanded. Several artists have previously attempted digitisation, and this project aims to continue that effort as an open-source development. <br> For questions or collaboration: <a href="https://amaliapopescu.com/">amaliapopescu.com</a></p>
+        </div>
+        <div class="rightside">
+            <div class="carousel">
+                <img id="book1" src="scans/book1_cover.jpg">
+                <div class="arrows">
+                    <button onclick="prevBook1()">←</button>
+                    <button onclick="nextBook1()">→</button>
+                </div>
+            </div>
+
+            <div class="carousel">
+                <img id="book2" src="scans/book2_cover.jpg">
+                <div class="arrows">
+                    <button onclick="prevBook2()">←</button>
+                    <button onclick="nextBook2()">→</button>
+                </div>
+            </div>
+
+            <div class="carousel">
+                <img id="book3" src="scans/book3_cover.jpg">
+                <div class="arrows">
+                    <button onclick="prevBook3()">←</button>
+                    <button onclick="nextBook3()">→</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<script>
+function createCarousel(images, imgId) {
+    let index = 0;
+    const img = document.getElementById(imgId);
+
+    function update() {
+        img.src = images[index];
+    }
+
+    return {
+        next() {
+            index = (index + 1) % images.length;
+            update();
+        },
+        prev() {
+            index = (index - 1 + images.length) % images.length;
+            update();
+        }
+    };
+}
+
+/* INIT */
+const book1 = createCarousel(
+    [
+        "scans/book1_cover.jpg","scans/book1_2.jpg","scans/book1_3.jpg","scans/book1_4.jpg",
+        "scans/book1_5.jpg","scans/book1_6.jpg","scans/book1_7.jpg","scans/book1_8.jpg","scans/book1_9.jpg"
+    ],
+    "book1"
+);
+
+const book2 = createCarousel(
+    [
+        "scans/book2_cover.jpg","scans/book2_2.jpg","scans/book2_3.jpg","scans/book2_4.jpg",
+        "scans/book2_5.jpg","scans/book2_6.jpg","scans/book2_7.jpg","scans/book2_8.jpg",
+        "scans/book2_9.jpg","scans/book2_10.jpg","scans/book2_11.jpg"
+    ],
+    "book2"
+);
+
+const book3 = createCarousel(
+    [
+        "scans/book3_cover.jpg","scans/book3_1.jpg","scans/book3_2.jpg","scans/book3_3.jpg",
+        "scans/book3_4.jpg","scans/book3_5.jpg","scans/book3_6.jpg","scans/book3_7.jpg",
+        "scans/book3_8.jpg","scans/book3_9.jpg","scans/book3_10.jpg",
+        "scans/book3_11.jpg","scans/book3_12.jpg"
+    ],
+    "book3"
+);
+
+/* IMPORTANT: keep global functions for HTML buttons */
+function nextBook1() { book1.next(); }
+function prevBook1() { book1.prev(); }
+
+function nextBook2() { book2.next(); }
+function prevBook2() { book2.prev(); }
+
+function nextBook3() { book3.next(); }
+function prevBook3() { book3.prev(); }
+</script>
+</body>
+</html>
