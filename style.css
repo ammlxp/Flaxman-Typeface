@@ -86,15 +86,15 @@ a {
     }
 
     .footnote {
-        top: 30px;
+        top: -30px;
         font-size: 14px;
         line-height: 120%;
-        width: 200px;
+        width: 400px;
     }
 
     .rightside {
         padding: 0 20px 20px 30px;
-        margin-top: -30px;
+        margin-top: 30px;
     }
 
     .carousel img {
