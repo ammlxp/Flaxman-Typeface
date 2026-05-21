@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'flaxman';
-    src: url('/fonts/flaxman/flaxman-inked.ttf') format('truetype');
+    src: url('flaxman-inked.ttf') format('truetype');
 }
 
 body {
